@@ -44,6 +44,11 @@ ServiceBaseRequest.interceptors.response.use(
   }
 );
 
+export const ServiceBaseIsDuplicateArray = (items, val, by) => {
+  let flatItems = items.map((value) => value[by]);
+  return flatItems.includes(val);
+};
+
 export const ServiceBaseHumanDate = (date) => {
   const options = {
     weekday: "long",
@@ -62,14 +67,23 @@ export const ServiceBaseHumanDate = (date) => {
   return "";
 };
 
+export const ServiceBaseHumanCurrency = (money, prefix = "Rp.") => {
+  if (money && typeof money === "number") {
+    return `${prefix} ${money
+      .toFixed(2)
+      .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")}`;
+  }
+
+  return "0";
+};
+
 export const ServiceBaseRandomID = (prefix = "ID") => {
   const date = new Date();
   return `${prefix.toUpperCase()}-${date.getTime()}`;
 };
 
-export const ServiceBaseIsDuplicateArray = (items, val, by) => {
-  let flatItems = items.map((value) => value[by]);
-  return flatItems.includes(val);
+export const ServiceBaseDateToISO = (date) => {
+  return date.toISOString().substring(0, 10);
 };
 
 export const ServiceBaseFileSharing = (prefix, response) => {

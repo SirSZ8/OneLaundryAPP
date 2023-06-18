@@ -12,6 +12,7 @@ import {
 } from "react-native-paper";
 import WidgetBaseLoader from "../base/WidgetBaseLoader";
 import { ServicePelangganList } from "../../services/ServicePelanggan";
+// import { white } from "react-native-paper/lib/typescript/src/styles/themes/v2/colors";
 
 const WidgetPelangganChoice = ({ onPress }) => {
   const [daftarPelanggan, setDaftarPelanggan] = useState([]);
@@ -58,6 +59,7 @@ const WidgetPelangganChoice = ({ onPress }) => {
 
             {complete && (
               <ScrollView
+                style={{ backgroundColor: "#537188" }}
                 contentContainerStyle={{
                   paddingBottom: 24,
                 }}
@@ -73,11 +75,19 @@ const WidgetPelangganChoice = ({ onPress }) => {
                 />
 
                 <DataTable>
-                  <DataTable.Header>
-                    <DataTable.Title>Kode Pelanggan</DataTable.Title>
-                    <DataTable.Title>Nama Pelanggan</DataTable.Title>
-                    <DataTable.Title>Alamat</DataTable.Title>
-                    <DataTable.Title>Telepon</DataTable.Title>
+                  <DataTable.Header style={{ borderBottomColor: "#9BA4B5" }}>
+                    <DataTable.Title textStyle={{ color: "#fff" }}>
+                      Kode Pelanggan
+                    </DataTable.Title>
+                    <DataTable.Title textStyle={{ color: "#fff" }}>
+                      Nama Pelanggan
+                    </DataTable.Title>
+                    <DataTable.Title textStyle={{ color: "#fff" }}>
+                      Alamat
+                    </DataTable.Title>
+                    <DataTable.Title textStyle={{ color: "#fff" }}>
+                      Telepon
+                    </DataTable.Title>
                   </DataTable.Header>
 
                   {daftarPelanggan.map((pelanggan, index) => (
@@ -90,16 +100,16 @@ const WidgetPelangganChoice = ({ onPress }) => {
                         }, 100)();
                       }}
                     >
-                      <DataTable.Cell>
+                      <DataTable.Cell textStyle={{ color: "#fff" }}>
                         {pelanggan.kode_pelanggan}
                       </DataTable.Cell>
-                      <DataTable.Cell>
+                      <DataTable.Cell textStyle={{ color: "#fff" }}>
                         {pelanggan.nama_pelanggan}
                       </DataTable.Cell>
-                      <DataTable.Cell>
+                      <DataTable.Cell textStyle={{ color: "#fff" }}>
                         {pelanggan.alamat_pelanggan}
                       </DataTable.Cell>
-                      <DataTable.Cell>
+                      <DataTable.Cell textStyle={{ color: "#fff" }}>
                         {pelanggan.telepon_pelanggan}
                       </DataTable.Cell>
                     </DataTable.Row>
@@ -114,11 +124,12 @@ const WidgetPelangganChoice = ({ onPress }) => {
         <List.Section style={{ paddingHorizontal: 16 }}>
           <List.Item
             title="Pilih Pelanggan"
+            titleStyle={{ color: "#9DF1DF" }}
             onPress={() => setVisible(true)}
             left={() => (
               <>
                 {!complete && <ActivityIndicator animating={!complete} />}
-                {complete && <List.Icon icon="account" />}
+                {complete && <List.Icon icon="account" color="#9DF1DF" />}
               </>
             )}
           ></List.Item>

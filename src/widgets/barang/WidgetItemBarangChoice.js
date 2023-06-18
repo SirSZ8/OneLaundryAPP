@@ -105,6 +105,7 @@ const WidgetItemBarangChoice = ({ onPress }) => {
         <List.Section style={{ paddingHorizontal: 16 }}>
           <List.Item
             title="Pilih Barang"
+            titleStyle={{ color: "#fff" }}
             onPress={() => setVisible(true)}
             left={() => (
               <>

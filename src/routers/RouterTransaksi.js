@@ -1,5 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ScreenTransaksiCreate from "../screens/transaksi/ScreenTransaksiCreate";
+import ScreenTransaksiList from "../screens/transaksi/ScreenTransaksiList";
+import ScreenTransaksiDetail from "../screens/transaksi/ScreenTransaksiDetail";
 import ScreenTransaksiReporting from "../screens/laporan/ScreenLaporanTransaksi";
 
 const Stack = createNativeStackNavigator();
@@ -10,6 +12,18 @@ export const RouterTransaksiAuthenticated = () => {
       <Stack.Screen
         name="ScreenTransaksiCreate"
         component={ScreenTransaksiCreate}
+      />
+      <Stack.Screen
+        name="ScreenTransaksiList"
+        component={ScreenTransaksiList}
+      />
+      <Stack.Screen
+        name="ScreenTransaksiDetail"
+        component={ScreenTransaksiDetail}
+      />
+      <Stack.Screen
+        name="ScreenTransaksiReporting"
+        component={ScreenTransaksiReporting}
       />
       {/* <Stack.Screen
         name="ScreenTransaksiBarangChoice"

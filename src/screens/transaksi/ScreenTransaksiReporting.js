@@ -7,11 +7,11 @@ import {
   ServiceBaseFileSharing,
   ServiceBaseHumanDate,
 } from "../../services/ServiceBase";
-
-import { SafeAreaView, Platform } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
 import { ServiceTransaksiReport } from "../../services/ServiceTransaksi";
-const ScreenLaporanTransaksi = memo(({ navigation }) => {
+import { SafeAreaView } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
+
+const ScreenTransaksiReporting = memo(({ navigation }) => {
   const [complete, setComplete] = useState(false);
   const [openStartDate, setOpenStartDate] = useState(false);
   const [openEndDate, setOpenEndDate] = useState(false);
@@ -35,7 +35,7 @@ const ScreenLaporanTransaksi = memo(({ navigation }) => {
     ServiceTransaksiReport(payload)
       .then(async (blob) => {
         try {
-          ServiceBaseFileSharing("LAPORAN-PEMBELIAN", blob);
+          ServiceBaseFileSharing("LAPORAN-TRANSAKSI", blob);
         } catch (error) {
           console.log(error);
         } finally {
@@ -51,8 +51,8 @@ const ScreenLaporanTransaksi = memo(({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Appbar.Header>
-        <Appbar.Action icon="menu" onPress={() => navigation.toggleDrawer()} />
-        <Appbar.Content title="Laporan Pembelian" />
+        <Appbar.BackAction onPress={() => navigation.goBack()} />
+        <Appbar.Content title="Laporan Transaksi" />
       </Appbar.Header>
       {complete && (
         <ScrollView
@@ -121,4 +121,4 @@ const ScreenLaporanTransaksi = memo(({ navigation }) => {
   );
 });
 
-export default ScreenLaporanTransaksi;
+export default ScreenTransaksiReporting;

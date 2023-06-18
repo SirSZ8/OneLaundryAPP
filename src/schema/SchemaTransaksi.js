@@ -1,12 +1,13 @@
 import { ServiceBaseRandomID } from "../services/ServiceBase";
 
 export default {
-  no_faktur: ServiceBaseRandomID("tx"),
+  no_faktur: ServiceBaseRandomID("TX"),
   tanggal_terima: new Date(),
+  total: 0,
   dibayar: 0,
-  berat: 0,
   kembali: 0,
-  total_harga: 0,
-  status_cucian: "",
-  status_pengembalian: "",
+  kode_pelanggan: "",
+  items: [],
+  // status_cucian: "",
+  // status_pengembalian: "",
 };

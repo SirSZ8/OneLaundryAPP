@@ -81,9 +81,9 @@ const ScreenPelangganList = ({ navigation }) => {
 
         <DataTable>
           <DataTable.Header style={{ borderBottomColor: "#9BA4B5" }}>
-            <DataTable.Title textStyle={{ color: "#fff" }}>
+            {/* <DataTable.Title textStyle={{ color: "#fff" }}>
               Kode Pelanggan
-            </DataTable.Title>
+            </DataTable.Title> */}
             <DataTable.Title textStyle={{ color: "#fff" }}>
               Nama Pelanggan
             </DataTable.Title>
@@ -101,9 +101,9 @@ const ScreenPelangganList = ({ navigation }) => {
                 key={index}
                 onPress={() => openPelangganEdit(pelanggan)}
               >
-                <DataTable.Cell textStyle={{ color: "#fff" }}>
+                {/* <DataTable.Cell textStyle={{ color: "#fff" }}>
                   {pelanggan.kode_pelanggan}
-                </DataTable.Cell>
+                </DataTable.Cell> */}
                 <DataTable.Cell textStyle={{ color: "#fff" }}>
                   {pelanggan.nama_pelanggan}
                 </DataTable.Cell>

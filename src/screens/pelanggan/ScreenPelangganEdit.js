@@ -100,7 +100,16 @@ const ScreenPelangganEdit = ({ navigation, route }) => {
               onChangeText={(text) => handleInput("nama_pelanggan", text)}
               label="Nama Pelanggan"
             />
-
+            <TextInput
+              value={pelanggan.alamat_pelanggan || ""}
+              onChangeText={(text) => handleInput("alamat_pelanggan", text)}
+              label="Alamat Pelanggan"
+            />
+            <TextInput
+              value={pelanggan.telepon_pelanggan || ""}
+              onChangeText={(text) => handleInput("telepon_pelanggan", text)}
+              label="Telepon Pelanggan"
+            />
             {/* <TextInput
               value={`${pemasok.hargaBeli || ""}`}
               onChangeText={(text) => handleInput("hargaBeli", parseInt(text))}

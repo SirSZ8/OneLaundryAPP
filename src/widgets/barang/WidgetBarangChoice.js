@@ -58,6 +58,7 @@ const WidgetBarangChoice = ({ onPress }) => {
 
             {complete && (
               <ScrollView
+                style={{ backgroundColor: "#537188" }}
                 contentContainerStyle={{
                   paddingBottom: 24,
                 }}
@@ -73,10 +74,16 @@ const WidgetBarangChoice = ({ onPress }) => {
                 />
 
                 <DataTable>
-                  <DataTable.Header>
-                    <DataTable.Title>Kode Barang</DataTable.Title>
-                    <DataTable.Title>Nama Barang</DataTable.Title>
-                    <DataTable.Title numeric>Harga Satuan</DataTable.Title>
+                  <DataTable.Header style={{ borderBottomColor: "#9BA4B5" }}>
+                    <DataTable.Title textStyle={{ color: "#fff" }}>
+                      Kode Barang
+                    </DataTable.Title>
+                    <DataTable.Title textStyle={{ color: "#fff" }}>
+                      Nama Barang
+                    </DataTable.Title>
+                    <DataTable.Title textStyle={{ color: "#fff" }} numeric>
+                      Harga Satuan
+                    </DataTable.Title>
                   </DataTable.Header>
 
                   {daftarBarang.map((barang, index) => (
@@ -89,9 +96,13 @@ const WidgetBarangChoice = ({ onPress }) => {
                         }, 100)();
                       }}
                     >
-                      <DataTable.Cell>{barang.kode_barang}</DataTable.Cell>
-                      <DataTable.Cell>{barang.nama_barang}</DataTable.Cell>
-                      <DataTable.Cell numeric>
+                      <DataTable.Cell textStyle={{ color: "#fff" }}>
+                        {barang.kode_barang}
+                      </DataTable.Cell>
+                      <DataTable.Cell textStyle={{ color: "#fff" }}>
+                        {barang.nama_barang}
+                      </DataTable.Cell>
+                      <DataTable.Cell textStyle={{ color: "#fff" }} numeric>
                         {barang.hargaSatuan}
                       </DataTable.Cell>
                     </DataTable.Row>
@@ -106,11 +117,12 @@ const WidgetBarangChoice = ({ onPress }) => {
         <List.Section style={{ paddingHorizontal: 16 }}>
           <List.Item
             title="Pilih Barang"
+            titleStyle={{ color: "#FFCAC8" }}
             onPress={() => setVisible(true)}
             left={() => (
               <>
                 {!complete && <ActivityIndicator animating={!complete} />}
-                {complete && <List.Icon icon="cube-outline" />}
+                {complete && <List.Icon icon="tshirt-crew" color="#FFCAC8" />}
               </>
             )}
           ></List.Item>
